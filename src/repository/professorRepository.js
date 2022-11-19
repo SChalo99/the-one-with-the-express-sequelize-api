@@ -1,14 +1,14 @@
 
-import Course from '../models/course.js'
+import Profesor from '../models/professor.js'
 
-const create = async (course) => {
+const create = async (professor) => {
 
     try {
-        console.log(course)
-
-        const newCourse = await Course.create(course);
+        console.log(professor)
+        
+        const newProfesor = await Profesor.create(professor);
             
-        return newCourse;
+        return newProfesor;
 
     } catch(error) {
         console.error(error)
@@ -21,7 +21,7 @@ const create = async (course) => {
 const findAll = async() => {
 
     try {
-        return await Course.findAll();
+        return await Profesor.findAll();
     } catch(error) {
         console.error(error)
         return null
@@ -32,7 +32,7 @@ const findAll = async() => {
 const findOne = async(id) => {
 
     try {
-        return await Course.findOne({
+        return await Profesor.findOne({
             where: {
                 id
             }
@@ -44,19 +44,19 @@ const findOne = async(id) => {
 
 }
 
-const update = async(course) => {
+const update = async(professor) => {
     try {
-        const foundcourse = await Course.findOne({
+        const foundProfessor = await Profesor.findOne({
             where: {
-                id: course.id
+                id: professor.id
             }
         })
 
-        foundcourse.set(course);
+        foundProfessor.set(professor);
 
-        await foundcourse.save();
+        await foundProfessor.save();
 
-        return foundcourse;
+        return foundProfessor;
 
     } catch(error) {
         console.error(error)
@@ -67,7 +67,7 @@ const update = async(course) => {
 const remove = async (id) => {
 
     try {
-        await Course.destroy({
+        await Profesor.destroy({
             where: {
                 id
             }
@@ -81,6 +81,6 @@ const remove = async (id) => {
     }
 }
 
-const CoursesRepository = { create, findAll, findOne, update, remove }
+const ProfesorRepository = { create, findAll, findOne, update, remove }
 
-export default CoursesRepository
+export default ProfesorRepository

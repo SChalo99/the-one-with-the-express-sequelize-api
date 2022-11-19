@@ -1,0 +1,39 @@
+POST http://localhost:3001/professor
+Content-Type: application/json
+
+{
+    "name": "Gonzalo",
+    "lastName": "Garma",
+    "category": "Pro"
+}
+
+############
+
+POST http://localhost:3001/professor
+Content-Type: application/json
+
+{
+    "name": "Sebastian",
+    "lastName": "Palomino",
+    "category": "noob"
+}
+
+#########
+GET http://localhost:3001/professor
+
+########
+GET http://localhost:3001/professor/1
+###########
+PUT http://localhost:3001/professor
+Content-Type: application/json
+
+{
+    "id": 2,
+    "name": "Sebastian",
+    "lastName": "Pagador",
+    "category": "super pro"
+}
+#######
+DELETE http://localhost:3001/professor/2
+Content-Type: application/json
+

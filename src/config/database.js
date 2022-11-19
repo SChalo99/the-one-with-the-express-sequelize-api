@@ -5,9 +5,11 @@ const username = 'postgres'
 const password = '123'
 const database = 'postgres'
 const dialect = 'postgres'
+const port = 5433
 
 const sequelize = new Sequelize(database,username,password, {
     host: hostname,
+    port,
     dialect: dialect,
     operatorAliases: false,
     pool: {
